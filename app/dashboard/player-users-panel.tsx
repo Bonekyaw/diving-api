@@ -61,11 +61,12 @@ export function PlayerUsersPanel({
       ) : null}
 
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[960px] text-left text-sm">
+        <table className="w-full min-w-[1080px] text-left text-sm">
           <thead>
             <tr className="border-b border-slate-100 bg-slate-50/80 text-xs font-semibold uppercase tracking-wide text-slate-500">
               <th className="px-6 py-3.5 font-semibold">Player</th>
               <th className="px-3 py-3.5 font-semibold">Level</th>
+              <th className="px-3 py-3.5 font-semibold">Current score</th>
               <th className="px-3 py-3.5 font-semibold">Best score</th>
               <th className="px-3 py-3.5 font-semibold">Joined</th>
               <th className="px-3 py-3.5 font-semibold">Status</th>
@@ -89,6 +90,9 @@ export function PlayerUsersPanel({
                   </td>
                   <td className="px-3 py-4 font-medium text-slate-700">
                     {user.currentLevel}
+                  </td>
+                  <td className="px-3 py-4 font-medium text-slate-700">
+                    {user.currentScore.toLocaleString()}
                   </td>
                   <td className="px-3 py-4">
                     <span className="font-semibold text-slate-900">
@@ -146,7 +150,7 @@ export function PlayerUsersPanel({
             {users.length === 0 ? (
               <tr>
                 <td
-                  colSpan={6}
+                  colSpan={7}
                   className="px-6 py-16 text-center text-sm text-slate-500"
                 >
                   No mobile app players have registered yet.
